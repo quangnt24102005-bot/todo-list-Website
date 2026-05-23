@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List Web App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="header">
+        <div>
+          <h1>Todo List</h1>
+        </div>
+      </section>
+
+      <section class="card">
+        <form id="task-form" class="form-grid" novalidate>
+          <div class="input-group">
+            <label for="task-title">Tên công việc</label>
+            <input
+              id="task-title"
+              type="text"
+              placeholder="Nhập công việc..."
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="task-date">Ngày giờ hẹn</label>
+            <input id="task-date" type="datetime-local" required />
+          </div>
+
+          <div class="input-group" style="grid-column: 1 / -1">
+            <button type="submit" class="primary-btn">Thêm công việc</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="filter-row">
+        <span class="badge badge-label"
+          >Lọc trạng thái: <strong id="active-filter">Tất cả</strong></span
+        >
+        <select id="task-filter">
+          <option value="all">Tất cả</option>
+          <option value="pending">Đang đợi phản hồi</option>
+          <option value="completed">Quá chăm chỉ nên đã hoàn thành</option>
+          <option value="missed">Quá lười nên nhót</option>
+        </select>
+      </section>
+
+      <section class="tasks-grid" id="task-list"></section>
+    </main>
+
+    <div class="modal-backdrop" id="reminder-modal">
+      <div class="modal">
+        <h2 id="modal-title">Reminder</h2>
+        <p id="modal-date">Thời gian hẹn</p>
+        <p id="modal-status">Nhấn Hoàn thành hoặc Tạm đóng.</p>
+        <div class="modal-actions">
+          <button id="complete-task" class="primary-btn">Hoàn thành</button>
+          <button id="dismiss-task" class="secondary-btn">Tạm đóng</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+:root {
+  color-scheme: dark;
+  color: #e8eaf6;
+  background: #11151a;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(85, 97, 255, 0.18),
+      transparent 24%
+    ),
+    linear-gradient(180deg, #0f1216 0%, #11151a 100%);
+  color: #eef2ff;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1140px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.header {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 2.8rem);
+  letter-spacing: -0.04em;
+}
+
+.header p {
+  margin: 0;
+  color: #b8c1ff;
+  max-width: 720px;
+}
+
+.card {
+  background: rgba(16, 22, 33, 0.92);
+  border: 1px solid rgba(159, 162, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(2, 8, 20, 0.22);
+  padding: 24px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.input-group {
+  display: grid;
+  gap: 10px;
+}
+
+.input-group label {
+  font-size: 0.92rem;
+  color: #9ca6ff;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid rgba(142, 152, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(18, 24, 38, 0.98);
+  color: #eef2ff;
+  padding: 14px 16px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #6b78ff;
+}
+
+button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #6f74ff, #4c87ff);
+  color: #fff;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e6ecff;
+}
+
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 18px;
+}
+
+.filter-row .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #c7d0ff;
+}
+
+.tasks-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.task-card {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(14, 19, 31, 0.95);
+  border: 1px solid rgba(95, 102, 255, 0.12);
+}
+
+.task-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  color: #a6b0ff;
+  font-size: 0.94rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #a6c8ff;
+}
+
+.status-completed {
+  color: #6de19d;
+}
+
+.status-missed {
+  color: #ff8a8a;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.task-actions button {
+  flex: 1;
+}
+
+.empty-state {
+  padding: 28px;
+  text-align: center;
+  color: #8f9ffe;
+  border: 1px dashed rgba(103, 111, 255, 0.35);
+  border-radius: 18px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  place-items: center;
+  padding: 18px;
+  z-index: 50;
+}
+
+.modal-backdrop.active {
+  display: grid;
+}
+
+.modal {
+  width: min(520px, 100%);
+  background: #11161f;
+  border: 1px solid rgba(109, 126, 255, 0.14);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 25px 85px rgba(3, 6, 16, 0.28);
+}
+
+.modal h2 {
+  margin: 0 0 14px;
+}
+
+.modal p {
+  margin: 0 0 22px;
+  color: #c8d1ff;
+}
+
+.modal .modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge-label {
+  position: relative;
+  padding-right: 10px;
+}
+
+.badge-label::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6f74ff;
+}
+
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-actions {
+    flex-direction: column;
+  }
+}
