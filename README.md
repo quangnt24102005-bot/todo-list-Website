@@ -1,8 +1,10 @@
 # todo-list-Website
 
-Simple todo list web app (vanilla HTML/CSS/JS).
+Todo list website cơ bản với AI.....
 
-- runs fully local with `localStorage` for persistence
-- open `index.html` via Live Server in VS Code
+Giao index người dùng giao diện AI
 
-**note:** edit this README to add description, screenshots, or usage details.
+![UI Preview](./ui_web.png)
+1 chút về web 90% AI
+
+chạy trên local+liveserver
